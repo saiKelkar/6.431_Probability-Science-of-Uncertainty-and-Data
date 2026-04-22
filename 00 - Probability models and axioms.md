@@ -36,3 +36,40 @@
 - set of pairs of scalars, i.e., the two-dimensional plane (or three-dimensional space) is denoted by $R^2$ or $R^3$ respectively ![[Screenshot_2026-04-22_11-31-42.png]]
 
 **Algebra of Sets** -- 
+- de Morgan's laws
+  $$(S \cup T)^c = S^c \cap T^c$$
+  $$(S \cap T)^c = S^c \cup T^c$$
+
+**Probabilistic Models** -- a mathematical description of an uncertain situation
+Elements:
+- sample space $\Omega$, which is the set of all possible outcomes of an experiment
+- probability law, which assigns to a set A of possible outcomes (also called an event) a non-negative number P(A) (called the probability of A) that encodes our knowledge or belief about the collective likelihood of the elements of A![[Screenshot_2026-04-22_12-19-32.png]]
+**Sample Space and Events** -- subset of the sample space, that is the collection of possible outcomes is called an event
+
+**Choosing an Appropriate Sample Space** -- 
+- Mutually Exclusive (No Overlap rule): different elements of the sample space should be distinct and mutually exclusive so that when the experiment is carried out, there is a unique outcome
+  For e.g., if the bins are labelled {1 or 3} and {1 or 4}
+  if we roll the die and get a 1, we are stuck. does the outcome belong in the first bin or the second? it fits both
+  
+- Collectively Exhaustive (No Gaps rule): sample space must cover every single possibility
+  For e.g., if we are rolling a standard six-sided die, but the sample space is S = {1, 2, 3, 4, 5}
+  if we roll a 6, our model breaks because that outcome doesn't exist in the universe
+
+- Goldilocks Level of Detail: we need enough detail to answer our specific question, but not so much that the model becomes impossible to calculate
+  For e.g., we are tossing a coin to see if we win a bet
+  low detail (just right): S = {H, T} <-- perfect for our needs
+  high detail (too much): S = {H and landed at 2:01 PM, H and landed at 2:02 PM,...} <-- irrelevant detail that adds clutter to the math
+
+**Sequential Models** -- a way to map out experiments that happen in steps rather than all at once
+For e.g., when we toss a coin three times, we don't just get a result but we get a sequence. 
+- Tree Structure: most common way to visualize
+  Nodes (the dots) -- represent a point in time where you are standing and waiting for something to happen
+  Branches (the lines) -- represent the possible outcomes of the next step
+  Leaves (the ends) -- each final path from the root to the tip of the branch represents exactly one unique outcome in your sample space ($\Omega$)
+  
+  Tree diagram ensures that our sample space is mutually exclusive and collectively exhaustive
+  - Mutually Exclusive: We can only follow one path from the root to a leaf
+  - Collectively Exhaustive: If we've drawn all the branches correctly, there is no way to finish the experiment without ending up at one of the leaves. 
+![[Screenshot_2026-04-22_14-18-42.png]]
+
+**Probability Laws** -- 
