@@ -72,4 +72,9 @@ For e.g., when we toss a coin three times, we don't just get a result but we get
   - Collectively Exhaustive: If we've drawn all the branches correctly, there is no way to finish the experiment without ending up at one of the leaves. 
 ![[Screenshot_2026-04-22_14-18-42.png]]
 
-**Probability Laws** -- 
+**Probability Laws** -- this specifies the likelihood of any outcome, or of any set of possible outcomes (an event)
+Probability law assigns to every event A, a number P(A), called the probability of A, satisfying the following axioms:
+- P(A) ≥ 0, for every A
+- If A and B are two disjoint events, then the probability of their union satisfies
+  $P(A \cup B) = P(A) + P(B)$ 
+- The probability of the entire sample space $\Omega$ is equal to 1, that is, P($\Omega$) = 1
