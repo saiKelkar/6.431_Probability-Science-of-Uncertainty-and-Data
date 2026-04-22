@@ -31,3 +31,8 @@
   $$\bigcap_{n=1}^{\infty} S_n = S_1 \cap S_2 \cap \dots = \{x \mid x \in S_n \text{ for all } n\}$$
 - two sets are disjoint if their intersection is empty
 - collection of sets is said to be a partition of a set S if the sets in the collection are disjoint and their union is S
+- if x and y are two objects, we use $(x, y)$ to denote the ordered pair of x and y
+- set of scalars is denoted by $R$ 
+- set of pairs of scalars, i.e., the two-dimensional plane (or three-dimensional space) is denoted by $R^2$ or $R^3$ respectively ![[Screenshot_2026-04-22_11-31-42.png]]
+
+**Algebra of Sets** -- 
