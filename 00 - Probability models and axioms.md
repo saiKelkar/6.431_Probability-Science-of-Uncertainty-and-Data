@@ -78,3 +78,28 @@ Probability law assigns to every event A, a number P(A), called the probability 
 - If A and B are two disjoint events, then the probability of their union satisfies
   $P(A \cup B) = P(A) + P(B)$ 
 - The probability of the entire sample space $\Omega$ is equal to 1, that is, P($\Omega$) = 1
+
+**Discrete Models** -- (countable logic)
+if the sample space consists of a finite number of possible outcomes, then the probability law is specified by the probabilities of the events that consist of a single element. 
+In particular, the probability of any event $\{s_1, s_2, \dots,s_n\}$ is the sum of the probabilities of its elements:
+$$P(\{s_1, s_2, \dots,s_n\}) = P(\{s_1\}) + P(\{s_2\}) + \dots + P(\{s_n\})$$
+
+**Discrete Uniform Probability Law** -- if the sample space consists of n possible outcomes which are equally likely (i.e., all single element events have the same probability), then the probability of any event A is given by
+$$P(A) = \frac{\text {Number of elements of A}}{n}$$
+
+**Continuous Models** -- (area logic)
+probabilities of a single element events may not be sufficient to characterize the probability law.
+the sample space $\Omega$ is an interval (like \[0, 1]) or a 2D / 3D region. We can no longer count the points because there are infinite number of points between any two values. 
+
+The probability of a single-element event (a specific point) is 0 -- if a single point had a tiny positive probability, say 0.0001, then adding up the infinite points in the interval would result in a total probability of infinity, which violates the rule that the total must be 1
+
+So instead of counting, we use measure,
+$$P(A) = \frac{\text{Area of A}}{\text{Total Area of }\Omega}$$
+
+**Properties of Probability Laws** -- 
+- if $A \subset B$, then P(A) ≤ P(B)
+- $P(A \cup B)$ = P(A) + P(B) - $P(A \cap B)$ 
+- $P(A \cup B)$ ≤ P(A) + P(B)
+- $P(A \cup B \cup C)$ = P(A) + $P(A^c \cap B)$ + $P(A^c \cap B^c \cap C)$ ![[Screenshot_2026-04-25_13-00-47.png]]
+
+**Conditional Probability** -- 
