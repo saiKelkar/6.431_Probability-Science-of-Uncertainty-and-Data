@@ -102,4 +102,19 @@ $$P(A) = \frac{\text{Area of A}}{\text{Total Area of }\Omega}$$
 - $P(A \cup B)$ ≤ P(A) + P(B)
 - $P(A \cup B \cup C)$ = P(A) + $P(A^c \cap B)$ + $P(A^c \cap B^c \cap C)$ ![[Screenshot_2026-04-25_13-00-47.png]]
 
-**Conditional Probability** -- 
+**Conditional Probability** -- this provides us with a way to reason about the outcome of an experiment based on partial information
+this takes into account the knowledge for any event A, gives us the conditional probability of A given B, denoted by $P(A \mid B)$ 
+
+$$P(A \mid B) = \frac{\text {number of elements of }A \cap B}{\text {number of elements of B}}$$
+
+$$P(A \mid B) = \frac {P(A \cap B)}{P(B)}$$
+
+where we assume that P(B) > 0
+
+**Properties of Conditional Probability** -- 
+- conditional probability of an event A, given an event B with P(B) > 0, is defined by $$P(A \mid B) = \frac {P(A \cap B)}{P(B)}$$
+  all known properties of probability laws remain valid for conditional probability laws
+- conditional probabilities can also be viewed as a probability law on a new universe B, because all of the conditional probability is concentrated on B
+- in the case where the possible outcomes are finitely many and equally likely, we have $$P(A \mid B) = \frac{\text {number of elements of }A \cap B}{\text {number of elements of B}}$$
+
+**Total Probability Theorem and Bayes' Rule** -- 
