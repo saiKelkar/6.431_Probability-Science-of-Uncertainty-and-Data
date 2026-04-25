@@ -117,4 +117,28 @@ where we assume that P(B) > 0
 - conditional probabilities can also be viewed as a probability law on a new universe B, because all of the conditional probability is concentrated on B
 - in the case where the possible outcomes are finitely many and equally likely, we have $$P(A \mid B) = \frac{\text {number of elements of }A \cap B}{\text {number of elements of B}}$$
 
-**Total Probability Theorem and Bayes' Rule** -- 
+**Total Probability Theorem and Bayes' Rule** -- to find the big answer, look at every possible scenario, calculate its contribution, and add them up
+
+(core concept - partition): 
+imagine designing a floor plan for a building, we divide the total area into three distinct zones - residential, commercial, and public
+- these zones are disjoint (they don't overlap)
+- together, they form a partition (they cover the whole floor)
+
+these zones are our events $A_1, A_2, A_3, \dots, A_n$
+now if we want to find the total probability of a specific event B (e.g., the light bulb is broken), then we look at the risk in each zone individually
+$$P(B) = P(A_1)P(B \mid A_1) + P(A_2)P(B \mid A_2) + \dots + P(A_n)P(B \mid A_n)$$
+e.g., we are playing a game, and our chance of winning depends entirely on who we are playing against
+
+identifying scenarios: 
+type 1 (half of the players): $P(A_1)$ = 0.5 (Easy mode)
+type 2 (quarter of the players): $P(A_2)$ = 0.25 (Medium mode)
+type 3 (quarter of the players): $P(A_3)$ = 0.25 (Hard mode)
+
+win rates:
+if we play type 1, we win 30% of the times: 0.3
+if we play type 2, we win 40% of the times: 0.4
+if we play type 3, we win 50% of the times: 0.5
+
+total win probability:
+(0.5 x 0.3) + (0.25 + 0.4) + (0.25 x 0.5) = 0.375 = 37.5%
+
