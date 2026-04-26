@@ -142,3 +142,39 @@ if we play type 3, we win 50% of the times: 0.5
 total win probability:
 (0.5 x 0.3) + (0.25 + 0.4) + (0.25 x 0.5) = 0.375 = 37.5%
 
+**Bayes' Rule** -- it's about the math of updating your beliefs based on new evidence
+- the cause $(A_i)$: these are the different scenarios (e.g., opponent type 1, 2, or 3)
+- the effect (B): this is the outcome we observed (e.g., "I won the game" or "The radar beeped")
+the formula asks: given that effect B happened, what is the probability that cause $A_i$ was the reason?
+$$P(A_i \mid B) = \frac{P(A_i)P(B \mid A_i)}{P(B)}$$
+where P(B) != 0
+
+e.g., radar is 99% accurate at detecting a plane if it's there. But planes are only there 5% of the time
+the radar goes off (B happens)
+is there actually a plane (A)?
+
+even though it's 99% accurate, the 34.26% result seems low; because planes are so rare (5%), the false alarms from the other 95% of the time (where the radar has a 10% error rate) actually outnumber the true detection
+--> always look at the prior probability (P(A)). if something is very rare, even a positive test result might still mean it's unlikely
+
+**Independence** -- two events are independent if knowing that one happened tells us absolutely nothing about the other
+
+two events A and B are independent if and only if:
+$$P(A \cap B) = P(A) \cdot P(B)$$
+alternatively, if P(B) > 0:
+$$P(A \mid B) = P(A)$$
+the second version: "the probability of A given that I already know B, is exactly the same as the original probability of A. the knowledge of B didn't change my mind"
+
+independence != disjoint
+disjoint (mutually exclusive): events A and B cannot happen at the same time $(A \cap B) = \emptyset$ 
+independence: events A and B don't affect each other
+
+crucial logic: if two events are disjoint, they are highly dependent. if I tell you that A happened, you know with 100% certainty that B did not happen. therefore, they cannot be independent.
+
+**Conditional Independence** -- (the context rule)
+two events can be independent in general, but become dependent once you have extra information (event C). Or, they can be dependent normally, but become independent once C is known
+
+e.g., two biased coins
+imagine having a blue coin (99% heads) and a red coin (1% heads)
+- without knowing which coin you picked, if the first toss is Heads, you immediately suspect you have a Blue coin. this makes you bet that the second toss will also be heads. in this case toss 1 and toss 2 are dependent
+- once you know which coin you picked (condition C) -- if someone tells us "you definitely have the blue coin", then the first toss tells us nothing about the second. the bias is already a known constant. the tosses are conditionally independent. 
+
