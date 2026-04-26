@@ -178,3 +178,29 @@ imagine having a blue coin (99% heads) and a red coin (1% heads)
 - without knowing which coin you picked, if the first toss is Heads, you immediately suspect you have a Blue coin. this makes you bet that the second toss will also be heads. in this case toss 1 and toss 2 are dependent
 - once you know which coin you picked (condition C) -- if someone tells us "you definitely have the blue coin", then the first toss tells us nothing about the second. the bias is already a known constant. the tosses are conditionally independent. 
 
+**Mutual Independence** -- (all or nothing rule)
+for a collection of events (like $A_1, A_2, A_3$) to be truly independent, two things must be true:
+- pairwise independence: $A_1, A_2$ are independent, $A_2, A_3$ are independent, and $A_1, A_3$ are independent
+- the full group condition: the probability of all three happening together must equal the product of their individual probabilities
+  $P(A_1 \cap A_2 \cap A_3) = P(A_1)P(A_2)P(A_3)$ 
+
+**Reliability** -- (series vs parallel)
+
+series connection (the weak link logic):
+success rule - all components must work
+math - multiply the probabilities
+P(series subsystem succeeds) = $p_1p_2...p_m$ 
+consequence - the more components you add in series, the lower the total reliability
+
+parallel connection (the redundancy logic):
+success - at least one component must work
+math - it's easier to calculate the chance of total failure and subtract from 1
+P(parallel subsystem succeeds) = 1 - P(parallel subsystem fails)
+							 = 1 - (1 - $p_1$)(1 - $p_2$)...(1 - $p_m$)
+consequence - adding components in parallel increases reliability
+![[Screenshot_2026-04-26_10-50-25.png]]
+subsystem: C -> B through E or F are parallel parts
+main line: once subsystem is known, we treat it as a single series block with node A
+final aggregate: we end up with two main parallel path from A to B (from A -> C (including subsystems) -> B and A -> D -> B)
+
+**Independent Trials and the Binomial Probabilities** -- 
