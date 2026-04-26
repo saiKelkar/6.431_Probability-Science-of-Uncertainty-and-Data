@@ -204,3 +204,79 @@ main line: once subsystem is known, we treat it as a single series block with no
 final aggregate: we end up with two main parallel path from A to B (from A -> C (including subsystems) -> B and A -> D -> B)
 
 **Independent Trials and the Binomial Probabilities** -- 
+Bernoulli Trial - smallest possible unit of data (like a single bit 0 or 1, or a single coin toss)
+Bernoulli trial is simply an experiment with only two possible outcomes:
+- success - probability p
+- failure - probability 1 - p
+
+when we repeat that trial n times (like tossing a coin 3 times), we get a sequence.
+as the tosses are independent, we find the probability of any specific sequence by multiplying the individual probabilities
+- if we want 3 heads in a row - p x p x p = $p^3$ 
+- if we want 2 heads and 1 tail (in that specific order HHT) - p x p x (1 - p) = $p^2(1 - p)$ 
+
+Binomial Logic $\binom{n}{k}$:
+binomial part comes in when we don't care about the order, just the total count
+
+e.g., if someone asks, what is the probability of getting exactly 2 heads in 3 tosses? 
+there are 3 different ways to achieve that state: HHT, HTH, THH
+each of those paths has the exact same probability $p^2(1 - p)$
+so the total probability is 3 x $p^2(1 - p)$ 
+
+the formula $\binom{n}{k}$ (n choose k) is a shortcut tool to tell us how many ways we can arrange those k successes in n trials without us having to draw the whole tree
+
+n = total number of trials / total independent attempts we are making
+k = number of successes / specific outcome we are looking for / number of times the success result actually happens out of those n attempts
+
+**Counting** -- 
+fundamental counting principle - this is a multiplication rule for sequences. if a process happens in stages, we multiply the number of choices at each stage to get the total number of possible outcomes
+
+for a process with r stages: Total outcomes = $n_1 \cdot n_2 \dots n_r$ 
+
+e.g., telephone numbers
+total digit: 7
+constraints: 1st digit cannot be 0 or 1 (only 2, 3, 4, 5, 6, 7, 8, 9)
+stage 1 - 8 choices
+stage 2-7 - 10 choices each (0 through 9)
+total: 8 x 10 x 10 x 10 x 10 x 10 x 10 = $8 \cdot 10^6$ (8 million possibilities)
+
+**k-Permutations** -- (Picking and Ordering)
+this is for when the order matters
+we have n objects, we pick k of them, and the sequence in which we place them is important
+
+logic: for the first slot we have n choices. for the second, n - 1. and we keep going until we have filled k slots
+formula: 
+$$\frac{n!}{(n - k)!}$$
+e.g., if we have 10 digits (n = 10) and we need to pick 4 for a passcode (k = 4), the order matters (1 - 2 - 3 - 4 is not 4 - 3 - 2 - 1)
+total = 10 x 9 x 8 x 7 = 5040
+
+**Combinations** -- (Picking, Ordering is irrelevant)
+this is for when we only care about the subset, not the sequence
+
+logic: combination is just a permutation where we divide out all the different ways the same group could be ordered. as the group of size k can be ordered in k! ways, we just divide the permutation formula by k!
+formula: 
+$$\frac{n!}{k! (n - k)!}$$
+e.g., if we are picking 3 spices out of 10 for a dish, it doesn't matter if we pick cumin or turmeric, or turmeric then cumin. the result in the pot is the same. 
+
+**Partitions** -- (Dividing the whole)
+this is a generalization of combinations. instead of just picking a committee and leaving the rest, we are dividing the entire set into several specific groups
+
+logic: we have n items and we want to put them into r groups of size $n_1, n_2, \dots, n_r$
+formula:
+$$\frac{n!}{n_1!n_2!\dots n_r!}$$
+e.g., in the letter TATTOO, how many ways can we arrange the letters?
+total letters (n) = 6
+groups: T's ($n_1$ = 3), A's ($n_2$ = 1), O's ($n_3$ = 2)
+total = $\frac{6!}{3!1!2!}$ = 60
+
+**Summary and Discussion** -- 
+a probability problem can usually be broken down into a few basic steps:
+1. the description of the sample space, that is, the set of possible outcomes of a given experiment
+2. the (possibly indirect) specification of the probability law (the probability of each event)
+3. the calculation of probabilities and conditional probabilities of various events of interest
+
+Three methods of specifying probability laws in probabilistic models:
+1. the counting method - this method applies to the case where the number of possible outcomes is finite, and all outcomes are equally likely. 
+   to calculate the probability of an event, we count the number of elements in the event, and divide by the number of elements of the sample space
+2. the sequential method - this method applies when the experiment has a sequential character, and suitable conditional probabilities are specifies or calculated along the branches of the corresponding tree (perhaps using the counting method).  
+   the probabilities of various events are then obtained by multiplying conditional probabilities along the corresponding paths of the tree, using the multiplication rule
+3. the divide and conquer method - here the probabilities P(B) of various events B are obtained from conditional probabilities $P(B \mid A_i)$, where the $A_i$ are suitable events that form a partition of the sample space and have known probabilities $P(A_i)$. the probability P(B) is then obtained by using the total probability theorem
